@@ -1,0 +1,8 @@
+.table-responsive {
+    max-height: 45vh;
+}
+
+.sticky-header {
+    position:sticky;
+    top: 0 ;
+}
