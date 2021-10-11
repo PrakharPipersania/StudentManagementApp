@@ -11,9 +11,12 @@ import { StudentService } from '../student.service';
 export class GiveAttendanceComponent implements OnInit {
 
   id: number = 0;
-  attendanceForm:FormGroup
+  minDate: string = "2021-01-01";
+  maxDate: string = new Date().toLocaleDateString();
+  attendanceForm:FormGroup;
 
   constructor(private activeRoute: ActivatedRoute,private router:Router,private studentService:StudentService) {
+    this.maxDate = this.maxDate.substr(6,4)+"-"+this.maxDate.substr(0,2)+"-"+this.maxDate.substr(3,2);
     this.attendanceForm = new FormGroup({
       'studentId': new FormControl('', Validators.required),
       'attendanceDate': new FormControl('', Validators.required),
@@ -23,15 +26,13 @@ export class GiveAttendanceComponent implements OnInit {
 
   ngOnInit(): void {
     this.activeRoute.params.subscribe((paramsData) => {
-      let today = new Date().toISOString().substr(0, 10);
       this.id = paramsData.id;
       this.attendanceForm.setValue({
         'studentId': this.id,
-        'attendanceDate': today,
+        'attendanceDate': this.maxDate,
         'isPresent': ''
       });
     })
-
   }
 
   submitAttendance(){

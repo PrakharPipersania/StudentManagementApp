@@ -8,6 +8,7 @@ import { AttendanceDetailsComponent } from './attendance-details/attendance-deta
 import { GiveAttendanceComponent } from './give-attendance/give-attendance.component';
 import { CheckAttendanceComponent } from './check-attendance/check-attendance.component';
 import { AllAttendanceRecordsComponent } from './all-attendance-records/all-attendance-records.component';
+import { AttendanceChartComponent } from './attendance-chart/attendance-chart.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: "all-attendance-records",
     component: AllAttendanceRecordsComponent
+  },
+  {
+    path: "attendance-chart",
+    component: AttendanceChartComponent
   }
 ];
 

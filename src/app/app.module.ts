@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
+import { ChartModule } from 'angular-highcharts'; 
 
 import { AppComponent } from './app.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
@@ -16,6 +17,7 @@ import { AttendanceDetailsComponent } from './attendance-details/attendance-deta
 import { GiveAttendanceComponent } from './give-attendance/give-attendance.component';
 import { CheckAttendanceComponent } from './check-attendance/check-attendance.component';
 import { AllAttendanceRecordsComponent } from './all-attendance-records/all-attendance-records.component';
+import { AttendanceChartComponent } from './attendance-chart/attendance-chart.component';
 
 @NgModule({
   declarations: [
@@ -30,13 +32,15 @@ import { AllAttendanceRecordsComponent } from './all-attendance-records/all-atte
     AttendanceDetailsComponent,
     GiveAttendanceComponent,
     CheckAttendanceComponent,
-    AllAttendanceRecordsComponent
+    AllAttendanceRecordsComponent,
+    AttendanceChartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

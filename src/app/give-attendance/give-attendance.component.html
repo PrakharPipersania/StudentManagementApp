@@ -15,7 +15,7 @@
                 <input [ngClass]="{
                     'has-error':attendanceForm.controls.attendanceDate.touched && attendanceForm.controls.attendanceDate.invalid,
                     'has-success' : attendanceForm.controls.attendanceDate.touched && attendanceForm.controls.attendanceDate.valid
-                }" type="date" formControlName="attendanceDate" class="form-control">
+                }" type="date" [min]="minDate" [max]="maxDate" formControlName="attendanceDate" class="form-control">
                 <span style="color:red;" *ngIf="attendanceForm.controls.attendanceDate.touched && attendanceForm.controls.attendanceDate.invalid">Please select a Date</span>
             </div>
         </div>
