@@ -10,5 +10,5 @@ export interface Attendance {
     id: number,
     attendanceDate: Date,
     studentId: number,
-    isPresent: string
+    isPresent: boolean
 }

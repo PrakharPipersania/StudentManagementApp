@@ -29,7 +29,9 @@ export class StudentService {
     return this.http.delete(`https://615ef420af365900172046b6.mockapi.io/prakharp/students/${id}`)
   }
 
-  saveAttendance(attendanceDetails:Object) {
+  saveAttendance(attendanceDetails: Attendance) {
+    attendanceDetails.studentId = +attendanceDetails.studentId;
+    attendanceDetails.isPresent = (attendanceDetails.isPresent.toString() == "true");
     return this.http.post(`https://615ef420af365900172046b6.mockapi.io/prakharp/attendance`,attendanceDetails);
   }
 
